@@ -1,0 +1,38 @@
+---
+ref: azure.deployment_create_or_update
+name: deployment_create_or_update
+runner_type: python-script
+description: Create or update an ARM deployment after exact confirmation and poll to completion.
+enabled: true
+entry_point: azure_action.py
+parameters:
+  operation:
+    type: string
+    default: deployment_create_or_update
+    immutable: true
+  profile:
+    type: 'string'
+    description: 'Secret JSON profile from the pack-owned encrypted Attune Key azure_profile.'
+    required: true
+    secret: true
+  resource_group:
+    type: 'string'
+    description: 'Azure resource group name.'
+    required: true
+  name:
+    type: 'string'
+    description: 'Resource name.'
+    required: true
+  deployment_json:
+    type: 'string'
+    description: 'JSON ARM deployment properties.'
+    required: true
+  confirmation:
+    type: 'string'
+    description: 'Exact target-specific destructive confirmation.'
+    required: true
+  poll_timeout:
+    type: 'integer'
+    description: 'Bounded long-running-operation timeout in seconds.'
+    required: false
+    default: 1200

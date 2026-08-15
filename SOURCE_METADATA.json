@@ -1,0 +1,31 @@
+{
+  "attributed_requirements_source": {
+    "repository": "https://github.com/StackStorm-Exchange/stackstorm-azure",
+    "revision": "9746497e88b18f66a5084094f246e20ebcc30723",
+    "tree": "e5c9956e6a83d38dbc8265fa497d2fe4b2b6e27c",
+    "pack_version": "1.0.0",
+    "license": "Apache-2.0",
+    "retrieved": "2026-08-14"
+  },
+  "implementation": "Clean modernization; no upstream source code was copied.",
+  "excluded_upstream_technology": [
+    "Azure AD Graph and azure-graphrbac",
+    "azurerm 0.8.27",
+    "azure-mgmt 0.30.0a1 bundle",
+    "azure<5.0 bundle",
+    "apache-libcloud",
+    "certificate-file authentication",
+    "detroy_vm.yaml stale action"
+  ],
+  "documentation_revisions": {
+    "azure_identity": "7ef6598481fff5f5c02a183108a324df6f9dbac1",
+    "arm_async_operations": "3fcd0977b587522d27365fcc432cd01c8df2e7be",
+    "graph_v1_overview": "4acb613ff37e36b901a0d9cc3558c9e9add3d0b6",
+    "graph_paging_and_throttling": "15f91f3675c0efce9de541b31911466cfbd2de42",
+    "graph_user_update": "5e6a6f02b2076fccb016e62254602f8875310cb6",
+    "graph_group_update": "0344c8596a4f690110968f4aafa1539a4a13c6df",
+    "graph_user_delete": "82d0912dd8dd5a5f9a5e51d471f9c7f248f8e118",
+    "graph_group_delete": "370a726ead116c29c4d3e0e0bd484fd260d28bed",
+    "blob_upload": "75162ac564772aaf7e37a740dbc56540e08b377e"
+  }
+}

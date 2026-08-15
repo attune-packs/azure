@@ -1,0 +1,39 @@
+---
+ref: azure.graph_users_create
+name: graph_users_create
+runner_type: python-script
+description: Create a Microsoft Entra user; the initial password is never returned.
+enabled: true
+entry_point: azure_action.py
+parameters:
+  operation:
+    type: string
+    default: graph_users_create
+    immutable: true
+  profile:
+    type: 'string'
+    description: 'Secret JSON profile from the pack-owned encrypted Attune Key azure_profile.'
+    required: true
+    secret: true
+  user_principal_name:
+    type: 'string'
+    description: 'User principal name.'
+    required: true
+  display_name:
+    type: 'string'
+    description: 'Display name.'
+    required: true
+  mail_nickname:
+    type: 'string'
+    description: 'Mail nickname.'
+    required: true
+  initial_password:
+    type: 'string'
+    description: 'Initial password; always redacted.'
+    required: true
+    secret: true
+  account_enabled:
+    type: 'boolean'
+    description: 'Create enabled account.'
+    required: false
+    default: false

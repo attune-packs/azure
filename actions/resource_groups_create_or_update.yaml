@@ -1,0 +1,30 @@
+---
+ref: azure.resource_groups_create_or_update
+name: resource_groups_create_or_update
+runner_type: python-script
+description: Create or update a resource group.
+enabled: true
+entry_point: azure_action.py
+parameters:
+  operation:
+    type: string
+    default: resource_groups_create_or_update
+    immutable: true
+  profile:
+    type: 'string'
+    description: 'Secret JSON profile from the pack-owned encrypted Attune Key azure_profile.'
+    required: true
+    secret: true
+  resource_group:
+    type: 'string'
+    description: 'Azure resource group name.'
+    required: true
+  location:
+    type: 'string'
+    description: 'Azure location name.'
+    required: true
+  tags_json:
+    type: 'string'
+    description: 'Flat JSON object of tags.'
+    required: false
+    default: '{}'

@@ -1,0 +1,25 @@
+---
+ref: azure.graph_users_update
+name: graph_users_update
+runner_type: python-script
+description: Update an allowlisted subset of user profile fields.
+enabled: true
+entry_point: azure_action.py
+parameters:
+  operation:
+    type: string
+    default: graph_users_update
+    immutable: true
+  profile:
+    type: 'string'
+    description: 'Secret JSON profile from the pack-owned encrypted Attune Key azure_profile.'
+    required: true
+    secret: true
+  user_id:
+    type: 'string'
+    description: 'Microsoft Entra user object UUID.'
+    required: true
+  changes_json:
+    type: 'string'
+    description: 'JSON object of allowlisted profile changes.'
+    required: true

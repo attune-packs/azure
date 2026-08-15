@@ -1,0 +1,29 @@
+---
+ref: azure.storage_accounts_delete
+name: storage_accounts_delete
+runner_type: python-script
+description: Delete a storage account after exact confirmation.
+enabled: true
+entry_point: azure_action.py
+parameters:
+  operation:
+    type: string
+    default: storage_accounts_delete
+    immutable: true
+  profile:
+    type: 'string'
+    description: 'Secret JSON profile from the pack-owned encrypted Attune Key azure_profile.'
+    required: true
+    secret: true
+  resource_group:
+    type: 'string'
+    description: 'Azure resource group name.'
+    required: true
+  name:
+    type: 'string'
+    description: 'Resource name.'
+    required: true
+  confirmation:
+    type: 'string'
+    description: 'Exact target-specific destructive confirmation.'
+    required: true

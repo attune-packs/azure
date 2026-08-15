@@ -1,0 +1,29 @@
+---
+ref: azure.graph_memberships_remove
+name: graph_memberships_remove
+runner_type: python-script
+description: Remove a direct member from a non-role-assignable group after exact confirmation.
+enabled: true
+entry_point: azure_action.py
+parameters:
+  operation:
+    type: string
+    default: graph_memberships_remove
+    immutable: true
+  profile:
+    type: 'string'
+    description: 'Secret JSON profile from the pack-owned encrypted Attune Key azure_profile.'
+    required: true
+    secret: true
+  group_id:
+    type: 'string'
+    description: 'Target group UUID.'
+    required: true
+  member_id:
+    type: 'string'
+    description: 'Member object UUID.'
+    required: true
+  confirmation:
+    type: 'string'
+    description: 'Exact target-specific destructive confirmation.'
+    required: true

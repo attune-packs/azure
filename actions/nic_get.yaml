@@ -1,0 +1,25 @@
+---
+ref: azure.nic_get
+name: nic_get
+runner_type: python-script
+description: Get one network interface.
+enabled: true
+entry_point: azure_action.py
+parameters:
+  operation:
+    type: string
+    default: nic_get
+    immutable: true
+  profile:
+    type: 'string'
+    description: 'Secret JSON profile from the pack-owned encrypted Attune Key azure_profile.'
+    required: true
+    secret: true
+  resource_group:
+    type: 'string'
+    description: 'Azure resource group name.'
+    required: true
+  name:
+    type: 'string'
+    description: 'Resource name.'
+    required: true

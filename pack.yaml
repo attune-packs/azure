@@ -1,0 +1,29 @@
+---
+ref: azure
+name: Microsoft Azure
+description: Secure Azure Resource Manager, Microsoft Graph, Key Vault, and Blob Storage automation.
+keywords:
+  - microsoft
+  - azure
+  - arm
+  - microsoft-graph
+  - managed-identity
+version: 1.0.0
+author: Attune Community
+email: maintainers@attune.dev
+python_versions:
+  - "3"
+testing:
+  enabled: true
+  discovery:
+    method: unittest
+  runners:
+    contracts:
+      type: unittest
+      entry_point: tests/test_contracts.py
+    runtime:
+      type: unittest
+      entry_point: tests/test_runtime.py
+    security:
+      type: unittest
+      entry_point: tests/test_security.py

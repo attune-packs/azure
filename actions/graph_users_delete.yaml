@@ -1,0 +1,25 @@
+---
+ref: azure.graph_users_delete
+name: graph_users_delete
+runner_type: python-script
+description: Delete a user after exact confirmation.
+enabled: true
+entry_point: azure_action.py
+parameters:
+  operation:
+    type: string
+    default: graph_users_delete
+    immutable: true
+  profile:
+    type: 'string'
+    description: 'Secret JSON profile from the pack-owned encrypted Attune Key azure_profile.'
+    required: true
+    secret: true
+  user_id:
+    type: 'string'
+    description: 'Microsoft Entra user object UUID.'
+    required: true
+  confirmation:
+    type: 'string'
+    description: 'Exact target-specific destructive confirmation.'
+    required: true

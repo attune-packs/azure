@@ -1,0 +1,30 @@
+---
+ref: azure.graph_groups_create
+name: graph_groups_create
+runner_type: python-script
+description: Create a non-role-assignable Microsoft Entra security group.
+enabled: true
+entry_point: azure_action.py
+parameters:
+  operation:
+    type: string
+    default: graph_groups_create
+    immutable: true
+  profile:
+    type: 'string'
+    description: 'Secret JSON profile from the pack-owned encrypted Attune Key azure_profile.'
+    required: true
+    secret: true
+  display_name:
+    type: 'string'
+    description: 'Display name.'
+    required: true
+  mail_nickname:
+    type: 'string'
+    description: 'Mail nickname.'
+    required: true
+  description:
+    type: 'string'
+    description: 'Optional group description.'
+    required: false
+    default: ''

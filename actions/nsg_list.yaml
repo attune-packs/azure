@@ -1,0 +1,32 @@
+---
+ref: azure.nsg_list
+name: nsg_list
+runner_type: python-script
+description: List network security group resources.
+enabled: true
+entry_point: azure_action.py
+parameters:
+  operation:
+    type: string
+    default: nsg_list
+    immutable: true
+  profile:
+    type: 'string'
+    description: 'Secret JSON profile from the pack-owned encrypted Attune Key azure_profile.'
+    required: true
+    secret: true
+  resource_group:
+    type: 'string'
+    description: 'Optional resource group scope.'
+    required: false
+    default: ''
+  max_items:
+    type: 'integer'
+    description: 'Maximum returned items (1..1000).'
+    required: false
+    default: 500
+  max_pages:
+    type: 'integer'
+    description: 'Maximum service pages (1..100).'
+    required: false
+    default: 50

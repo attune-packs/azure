@@ -1,0 +1,25 @@
+---
+ref: azure.graph_groups_update
+name: graph_groups_update
+runner_type: python-script
+description: Update group name/description.
+enabled: true
+entry_point: azure_action.py
+parameters:
+  operation:
+    type: string
+    default: graph_groups_update
+    immutable: true
+  profile:
+    type: 'string'
+    description: 'Secret JSON profile from the pack-owned encrypted Attune Key azure_profile.'
+    required: true
+    secret: true
+  group_id:
+    type: 'string'
+    description: 'Microsoft Entra group object UUID.'
+    required: true
+  changes_json:
+    type: 'string'
+    description: 'JSON displayName/description changes.'
+    required: true

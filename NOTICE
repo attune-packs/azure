@@ -1,0 +1,10 @@
+Microsoft Azure Attune Pack
+Copyright 2026 Attune Community
+
+Requirements were informed by StackStorm Exchange's stackstorm-azure pack,
+version 1.0.0 at revision 9746497e88b18f66a5084094f246e20ebcc30723,
+licensed under Apache License 2.0. This implementation is a clean modernization;
+no upstream source code was copied. See SOURCE_METADATA.json for exact metadata.
+
+Microsoft, Azure, and Microsoft Graph are trademarks of Microsoft Corporation.
+This project is not affiliated with or endorsed by Microsoft Corporation.

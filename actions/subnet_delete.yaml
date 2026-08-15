@@ -1,0 +1,38 @@
+---
+ref: azure.subnet_delete
+name: subnet_delete
+runner_type: python-script
+description: Delete a subnet after exact confirmation.
+enabled: true
+entry_point: azure_action.py
+parameters:
+  operation:
+    type: string
+    default: subnet_delete
+    immutable: true
+  profile:
+    type: 'string'
+    description: 'Secret JSON profile from the pack-owned encrypted Attune Key azure_profile.'
+    required: true
+    secret: true
+  resource_group:
+    type: 'string'
+    description: 'Azure resource group name.'
+    required: true
+  vnet_name:
+    type: 'string'
+    description: 'Virtual network name.'
+    required: true
+  name:
+    type: 'string'
+    description: 'Resource name.'
+    required: true
+  confirmation:
+    type: 'string'
+    description: 'Exact target-specific destructive confirmation.'
+    required: true
+  poll_timeout:
+    type: 'integer'
+    description: 'Bounded long-running-operation timeout in seconds.'
+    required: false
+    default: 1200

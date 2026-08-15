@@ -1,0 +1,25 @@
+---
+ref: azure.deployment_status
+name: deployment_status
+runner_type: python-script
+description: Get ARM deployment status.
+enabled: true
+entry_point: azure_action.py
+parameters:
+  operation:
+    type: string
+    default: deployment_status
+    immutable: true
+  profile:
+    type: 'string'
+    description: 'Secret JSON profile from the pack-owned encrypted Attune Key azure_profile.'
+    required: true
+    secret: true
+  resource_group:
+    type: 'string'
+    description: 'Azure resource group name.'
+    required: true
+  name:
+    type: 'string'
+    description: 'Resource name.'
+    required: true

@@ -1,0 +1,48 @@
+---
+ref: azure.blob_upload
+name: blob_upload
+runner_type: python-script
+description: Upload only from the worker artifact directory.
+enabled: true
+entry_point: azure_action.py
+parameters:
+  operation:
+    type: string
+    default: blob_upload
+    immutable: true
+  profile:
+    type: 'string'
+    description: 'Secret JSON profile from the pack-owned encrypted Attune Key azure_profile.'
+    required: true
+    secret: true
+  storage_account:
+    type: 'string'
+    description: 'Storage account name.'
+    required: true
+  container:
+    type: 'string'
+    description: 'Blob container name.'
+    required: true
+  blob_name:
+    type: 'string'
+    description: 'Destination blob name.'
+    required: true
+  artifact_path:
+    type: 'string'
+    description: 'Relative path confined to ATTUNE_ARTIFACT_DIR.'
+    required: true
+  overwrite:
+    type: 'boolean'
+    description: 'Permit replacing an existing blob only with an ETag and confirmation.'
+    required: false
+    default: false
+  if_match:
+    type: 'string'
+    description: 'Required current ETag when overwrite is true.'
+    required: false
+    default: ''
+  confirmation:
+    type: 'string'
+    description: 'Exact OVERWRITE confirmation; required when overwrite is true.'
+    required: false
+    default: ''

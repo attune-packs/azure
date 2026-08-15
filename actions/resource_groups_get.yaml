@@ -1,0 +1,21 @@
+---
+ref: azure.resource_groups_get
+name: resource_groups_get
+runner_type: python-script
+description: Get one resource group.
+enabled: true
+entry_point: azure_action.py
+parameters:
+  operation:
+    type: string
+    default: resource_groups_get
+    immutable: true
+  profile:
+    type: 'string'
+    description: 'Secret JSON profile from the pack-owned encrypted Attune Key azure_profile.'
+    required: true
+    secret: true
+  resource_group:
+    type: 'string'
+    description: 'Azure resource group name.'
+    required: true

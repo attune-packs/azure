@@ -1,0 +1,31 @@
+---
+ref: azure.graph_memberships_list
+name: graph_memberships_list
+runner_type: python-script
+description: List direct group members.
+enabled: true
+entry_point: azure_action.py
+parameters:
+  operation:
+    type: string
+    default: graph_memberships_list
+    immutable: true
+  profile:
+    type: 'string'
+    description: 'Secret JSON profile from the pack-owned encrypted Attune Key azure_profile.'
+    required: true
+    secret: true
+  group_id:
+    type: 'string'
+    description: 'Microsoft Entra group object UUID.'
+    required: true
+  max_items:
+    type: 'integer'
+    description: 'Maximum returned items (1..1000).'
+    required: false
+    default: 500
+  max_pages:
+    type: 'integer'
+    description: 'Maximum service pages (1..100).'
+    required: false
+    default: 50

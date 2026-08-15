@@ -1,0 +1,38 @@
+---
+ref: azure.blob_download
+name: blob_download
+runner_type: python-script
+description: Download only into a new file in the worker artifact directory.
+enabled: true
+entry_point: azure_action.py
+parameters:
+  operation:
+    type: string
+    default: blob_download
+    immutable: true
+  profile:
+    type: 'string'
+    description: 'Secret JSON profile from the pack-owned encrypted Attune Key azure_profile.'
+    required: true
+    secret: true
+  storage_account:
+    type: 'string'
+    description: 'Storage account name.'
+    required: true
+  container:
+    type: 'string'
+    description: 'Blob container name.'
+    required: true
+  blob_name:
+    type: 'string'
+    description: 'Source blob name.'
+    required: true
+  artifact_path:
+    type: 'string'
+    description: 'Relative new path confined to ATTUNE_ARTIFACT_DIR.'
+    required: true
+  if_match:
+    type: 'string'
+    description: 'Optional source ETag.'
+    required: false
+    default: ''

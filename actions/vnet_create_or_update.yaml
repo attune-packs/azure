@@ -1,0 +1,34 @@
+---
+ref: azure.vnet_create_or_update
+name: vnet_create_or_update
+runner_type: python-script
+description: Create or update a virtual network and poll to completion.
+enabled: true
+entry_point: azure_action.py
+parameters:
+  operation:
+    type: string
+    default: vnet_create_or_update
+    immutable: true
+  profile:
+    type: 'string'
+    description: 'Secret JSON profile from the pack-owned encrypted Attune Key azure_profile.'
+    required: true
+    secret: true
+  resource_group:
+    type: 'string'
+    description: 'Azure resource group name.'
+    required: true
+  name:
+    type: 'string'
+    description: 'Resource name.'
+    required: true
+  resource_json:
+    type: 'string'
+    description: 'JSON object containing the Azure SDK resource contract.'
+    required: true
+  poll_timeout:
+    type: 'integer'
+    description: 'Bounded long-running-operation timeout in seconds.'
+    required: false
+    default: 1200

@@ -1,0 +1,21 @@
+---
+ref: azure.graph_users_get
+name: graph_users_get
+runner_type: python-script
+description: Get selected fields for one Microsoft Graph user.
+enabled: true
+entry_point: azure_action.py
+parameters:
+  operation:
+    type: string
+    default: graph_users_get
+    immutable: true
+  profile:
+    type: 'string'
+    description: 'Secret JSON profile from the pack-owned encrypted Attune Key azure_profile.'
+    required: true
+    secret: true
+  user_id:
+    type: 'string'
+    description: 'Microsoft Entra user object UUID.'
+    required: true

@@ -1,0 +1,33 @@
+---
+ref: azure.graph_memberships_add
+name: graph_memberships_add
+runner_type: python-script
+description: Add a verified user/group to a non-role-assignable group after exact confirmation.
+enabled: true
+entry_point: azure_action.py
+parameters:
+  operation:
+    type: string
+    default: graph_memberships_add
+    immutable: true
+  profile:
+    type: 'string'
+    description: 'Secret JSON profile from the pack-owned encrypted Attune Key azure_profile.'
+    required: true
+    secret: true
+  group_id:
+    type: 'string'
+    description: 'Target group UUID.'
+    required: true
+  member_id:
+    type: 'string'
+    description: 'Member object UUID.'
+    required: true
+  member_kind:
+    type: 'string'
+    description: 'Member kind: user or group.'
+    required: true
+  confirmation:
+    type: 'string'
+    description: 'Exact target-specific destructive confirmation.'
+    required: true
