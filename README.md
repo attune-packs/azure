@@ -16,7 +16,7 @@ pack files, workflow source, command history, logs, or artifacts.
 Managed identity is the preferred production profile:
 
 ```sh
-attune key create --ref azure_profile --name "Azure profile" --encrypt \
+attune key create --local-ref azure_profile --name "Azure profile" --encrypt \
   --owner-type pack --owner-pack-ref azure \
   --value '{"cloud":"public","auth_mode":"managed_identity","subscription_id":"00000000-0000-0000-0000-000000000000","managed_identity_client_id":"11111111-1111-1111-1111-111111111111"}'
 ```
